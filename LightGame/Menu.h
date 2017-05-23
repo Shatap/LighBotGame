@@ -26,8 +26,9 @@ public:
     //    sf::RectangleShape _quitbutton;
     //    sf::Image _logo;
     void loop() override;
-    void init() override;
+//    void init() override;
     void mouse_button_pressed() override;
+    void mouse_button_released() override;
     void key_pressed(const sf::Event::KeyEvent &) override;
     bool souris_dans_rectangle(const Position & coin, const Position & dims) const;
 };

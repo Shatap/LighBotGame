@@ -47,7 +47,7 @@ protected:
 
     // divers traitements d'évenements
     virtual void mouse_button_pressed ()                 {}
-
+    virtual void mouse_button_released()                 {}
     virtual void key_pressed (const sf::Event::KeyEvent & /*event*/) {}
 
 private:

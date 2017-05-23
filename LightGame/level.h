@@ -42,8 +42,7 @@ public:
     void loop() override;
     void displayLevelButtons();
     void mouse_button_pressed() override;
-
-
+    void mouse_button_released() override;
 };
 
 #endif // LEVEL_H

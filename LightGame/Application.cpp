@@ -33,6 +33,9 @@ void Application::process_events()
 
     while (_window.pollEvent(_event))
     {
+
+        sf::Event event;
+
         switch (_event.type)
         {
         case sf::Event::Closed :
@@ -44,6 +47,11 @@ void Application::process_events()
         case sf::Event::MouseButtonPressed :
             set_mouse_coord(_event.mouseButton.x, _event.mouseButton.y);
             mouse_button_pressed();
+            break;
+        case sf::Event::MouseButtonReleased :
+            // bouton = event.mouseButton.button;
+            set_mouse_coord(event.mouseButton.x, event.mouseButton.y);
+            mouse_button_released();
             break;
         case sf::Event::MouseMoved :
             set_mouse_coord(_event.mouseMove.x, _event.mouseMove.y);

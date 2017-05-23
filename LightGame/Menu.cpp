@@ -2,7 +2,6 @@
 #include "level.h"
 #include <iostream>
 
-bool ntm ;
 Menu::Menu(sf::RenderWindow &window)
     : Application(window)
 {
@@ -49,16 +48,10 @@ void Menu::loop()
     _window.display();
 }
 
-void Menu::init()
-{
-
-}
-
 void Menu::mouse_button_pressed()
 {
     if(_playbutton.getGlobalBounds().contains(_mouse))
     {
-
         Level l(_window);
         _window.clear(sf::Color::White);
         l.run();
@@ -70,12 +63,17 @@ void Menu::mouse_button_pressed()
     }
 }
 
+void Menu::mouse_button_released()
+{
+
+}
+
 void Menu::key_pressed(const sf::Event::KeyEvent &)
 {
 
 }
 
-bool Menu::souris_dans_rectangle(const Position &coin, const Position &dims) const
-{
-    //    if(_mouse<= )
-}
+//bool Menu::souris_dans_rectangle(const Position &coin, const Position &dims) const
+//{
+//    //    if(_mouse<= )
+//}

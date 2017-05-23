@@ -1,6 +1,8 @@
 #include "level.h"
 #include "action.h"
 
+bool mousedown = false;
+
 Level::Level(sf::RenderWindow &window)
     : Application(window)
 {
@@ -71,6 +73,8 @@ void Level::mouse_button_pressed()
 {
     if(_changeAltitude->getDimension().getGlobalBounds().contains(_mouse))
     {
+        mousedown = true;
+        std::cout << mousedown << std::endl;
         Action  *_CA = new Action(45,45,Type_Action::change_altitude);
         _actionPannel.push_back(_CA);
         std::cout<<"CHANGE ALTITUDE" << std::endl;
@@ -96,6 +100,11 @@ void Level::mouse_button_pressed()
     {
         exit(0);
     }
+
+}
+
+void Level::mouse_button_released()
+{
 
 }
 
