@@ -60,7 +60,7 @@ void Application::process_events()
  */
 void Application::set_mouse_coord(int x, int y)
 {
-    std::cout << "mouse : x : " << _mouse.x << ", y : " << _mouse.y << std::endl;
+ //   std::cout << "mouse : x : " << _mouse.x << ", y : " << _mouse.y << std::endl;
     auto pos = _window.mapPixelToCoords( {x, y});
     _mouse = { pos.x, pos.y };
 }

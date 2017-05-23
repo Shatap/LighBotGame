@@ -1,9 +1,6 @@
 #include "hexagon.h"
 
-Hexagon::Hexagon()
-{
 
-}
 
 Hexagon::Hexagon(float size, sf::Color color)
     :_size{size},_color{color}
@@ -14,6 +11,7 @@ Hexagon::Hexagon(float size, sf::Color color)
     _hexa.setFillColor(color);
     _hexa.setOutlineThickness(2);
     _hexa.setRotation(30);
+    _hexa.setOrigin(_hexa.getPosition().x+20,_hexa.getPosition().y+20);
 
 
 }
@@ -38,7 +36,10 @@ void Hexagon::setPosition(sf::Vector2f pos)
     _hexa.setPosition(pos);
 }
 
-void Hexagon::getCenter()
+sf::CircleShape Hexagon::getHex()
 {
-//    _hexa.getOrigin();
+return this->_hexa;
+
+
+
 }

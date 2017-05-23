@@ -12,13 +12,13 @@ private:
     sf::Color _color;
 
 public:
-    Hexagon();
     Hexagon(float size, sf::Color color);
     ~Hexagon();
     void DrawHex(sf::RenderWindow &w);
     sf::Vector2f getPosition();
     void setPosition(sf::Vector2f pos);
     void getCenter();
+    sf::CircleShape getHex();
 };
 
-#endif // HEXAGON_Hnau
+#endif // HEXAGON_H

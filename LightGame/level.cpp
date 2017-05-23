@@ -23,6 +23,7 @@ Level::Level(sf::RenderWindow &window)
     _actionPannel.push_back(_rotation);
 
     _robot = new Robot();
+    std::cout<< _grid->getGrid().at(0)->getPosition().x <<std::endl;
 }
 //bool Level::quit()
 //{
@@ -54,6 +55,11 @@ void Level::loop()
     _changeAltitude->displayAction(_window);
     _primaryProg->drawPrimProg(_window);
     mouse_button_pressed();
+    _robot->setPosition(_grid->getGrid().at(10));
+    std::cout<< "POSITIONNN : " << _grid->getGrid().at(0)->getPosition().x <<std::endl;
+    std::cout<< "ORIGINE " << _grid->getGrid().at(0)->getPosition().x <<std::endl;
+
+
     _window.display();
 
 
