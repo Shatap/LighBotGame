@@ -58,6 +58,7 @@ void Menu::mouse_button_pressed()
 {
     if(_playbutton.getGlobalBounds().contains(_mouse))
     {
+
         Level l(_window);
         _window.clear(sf::Color::White);
         l.run();

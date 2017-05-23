@@ -42,7 +42,6 @@ void Application::process_events()
             key_pressed(_event.key);
             break;
         case sf::Event::MouseButtonPressed :
-            // bouton = event.mouseButton.button;
             set_mouse_coord(_event.mouseButton.x, _event.mouseButton.y);
             mouse_button_pressed();
             break;

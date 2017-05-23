@@ -40,7 +40,6 @@ void Level::loop()
     _grid->display(_window);
     displayLevelButtons();
     _robot->draw_bot(_window);
-    _QUIT_DIM= _quit.getGlobalBounds();
 
     //        if(sf::Event::MouseButtonPressed)
     //        {
@@ -54,9 +53,16 @@ void Level::loop()
     _forward->displayAction(_window);
     _changeAltitude->displayAction(_window);
     _primaryProg->drawPrimProg(_window);
-
+    mouse_button_pressed();
     _window.display();
 
+
+
+
+}
+
+void Level::mouse_button_pressed()
+{
     if(_changeAltitude->getDimension().getGlobalBounds().contains(_mouse))
     {
         Action  *_CA = new Action(45,45,Type_Action::change_altitude);
@@ -72,7 +78,7 @@ void Level::loop()
 
     }
 
-    if(_rotation->getDimension().getGlobalBounds().contains(_mouse))
+    if(_rotation->getDimension().getGlobalBounds().contains(_mouse) && sf::Event::MouseButtonPressed)
     {
         Action  *_AR= new Action(45,45,Type_Action::rotate);
         _actionPannel.push_back(_AR);
@@ -80,16 +86,12 @@ void Level::loop()
 
     }
 
-
-
-
-
-
-
-
+    if(_quit.getGlobalBounds().contains(_mouse))
+    {
+        exit(0);
+    }
 
 }
-
 
 
 void Level::displayLevelButtons()

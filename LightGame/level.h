@@ -41,8 +41,7 @@ public:
     void pause_exec();
     void loop() override;
     void displayLevelButtons();
-    void setMousePos(int x,int y);
-    bool isMouseInEntity(const sf::Vector2i & mouse, const sf::FloatRect & entity);
+    void mouse_button_pressed() override;
 
 
 };
