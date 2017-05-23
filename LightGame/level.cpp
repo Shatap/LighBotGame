@@ -40,7 +40,6 @@ void Level::loop()
     _grid->display(_window);
     displayLevelButtons();
     _robot->draw_bot(_window);
-    _window.display();
     _QUIT_DIM= _quit.getGlobalBounds();
 
     //        if(sf::Event::MouseButtonPressed)
@@ -60,8 +59,28 @@ void Level::loop()
 
     if(_changeAltitude->getDimension().getGlobalBounds().contains(_mouse))
     {
-//        _primaryProg->addAction();
+        Action  *_CA = new Action(45,45,Type_Action::change_altitude);
+        _actionPannel.push_back(_CA);
+        std::cout<<"CHANGE ALTITUDE" << std::endl;
+
     }
+    if(_forward->getDimension().getGlobalBounds().contains(_mouse))
+    {
+        Action  *_AF = new Action(45,45,Type_Action::forward);
+        _actionPannel.push_back(_AF);
+        std::cout<<"FORWARD" << std::endl;
+
+    }
+
+    if(_rotation->getDimension().getGlobalBounds().contains(_mouse))
+    {
+        Action  *_AR= new Action(45,45,Type_Action::rotate);
+        _actionPannel.push_back(_AR);
+        std::cout<<"ROTATE" << std::endl;
+
+    }
+
+
 
 
 

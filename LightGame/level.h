@@ -16,6 +16,7 @@ private:
    // sf::RenderWindow _lwindow;
     std::vector<Level*>_levels;
     std::vector<Grid *> _gridslvl;
+    std::vector<Action *> _actionPannel;
     Grid * _grid;
     float _score;
     Action *_rotation ;
@@ -27,7 +28,6 @@ private:
     sf::FloatRect _QUIT_DIM ;
   //  sf::Vector2i _mouse;
     PrimaryProg * _primaryProg;
-    std::vector<Action *> _actionPannel;
     Robot *_robot;
 
 public:

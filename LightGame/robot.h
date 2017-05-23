@@ -8,7 +8,7 @@
 class Robot
 {
 private:
-    sf::RectangleShape _robot;
+    sf::CircleShape _robot;
 public:
     Robot();
     void draw_bot(sf::RenderWindow &w);
