@@ -12,11 +12,11 @@ PrimaryProg::PrimaryProg()
 
 std::vector<Action *> PrimaryProg::addAction(Action & action)
 {
-_progActions.push_back(action);
+//_progActions.push_back(action);
 
 }
 
-std::vector<Action *> PrimaryProg::removeAction(std::vector<Action *>)
+std::vector<Action *> PrimaryProg::removeAction(Action &action)
 {
 
 }

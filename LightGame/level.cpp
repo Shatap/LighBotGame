@@ -22,8 +22,14 @@ Level::Level(sf::RenderWindow &window)
     _actionPannel.push_back(_forward);
     _actionPannel.push_back(_rotation);
 
+    _robot = new Robot();
 }
+//bool Level::quit()
+//{
+//    if(isMouseInEntity(_mouse,_QUIT_DIM))
+//        return _isRunning=false;    draw_bot(_window);
 
+//}
 void Level::loop()
 {
     _window.clear(sf::Color::White);
@@ -33,6 +39,16 @@ void Level::loop()
     _secProg->displayAction(_window);
     _grid->display(_window);
     displayLevelButtons();
+    _robot->draw_bot(_window);
+    _window.display();
+    _QUIT_DIM= _quit.getGlobalBounds();
+
+    //        if(sf::Event::MouseButtonPressed)
+    //        {
+    //            setMousePos(event.mouseButton.x,event.mouseButton.y);
+    //            std::cout<<_mouse.x<<std::endl;
+    //        }
+
 
 
     _rotation->displayAction(_window);
@@ -44,7 +60,7 @@ void Level::loop()
 
     if(_changeAltitude->getDimension().getGlobalBounds().contains(_mouse))
     {
-        _primaryProg->addAction()
+//        _primaryProg->addAction();
     }
 
 

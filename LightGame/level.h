@@ -7,6 +7,7 @@
 #include "execsecprog.h"
 #include "Application.h"
 #include "primaryprog.h"
+#include "robot.h"
 
 
 class Level: public Application
@@ -27,7 +28,7 @@ private:
   //  sf::Vector2i _mouse;
     PrimaryProg * _primaryProg;
     std::vector<Action *> _actionPannel;
-
+    Robot *_robot;
 
 public:
     Level();

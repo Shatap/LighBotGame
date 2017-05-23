@@ -15,7 +15,7 @@ Grid::Grid()
     for(int i=0;i<=GRID_SIZE;i++)
 
     {
-        _hex  = new Hexagon(30.,sf::Color::Blue);
+        _hex  = new Hexagon(30.,sf::Color::Red);
 
             _prevPosX2=_grid.at(0)->getPosition().x;
             _prevPosY2=_grid.at(0)->getPosition().y;
@@ -37,7 +37,7 @@ Grid::Grid()
 
             else
             {
-                _hex  = new Hexagon(30.,sf::Color::Blue);
+                _hex  = new Hexagon(30.,sf::Color::Red);
 
                 _prevPosX2=_grid.back()->getPosition().x;
                 _prevPosY2=_grid.back()->getPosition().y;
@@ -48,7 +48,7 @@ Grid::Grid()
 
 
         }
-
+                    std::cout << " n cases: " << _grid.size() << std::endl;
     }
 
 }

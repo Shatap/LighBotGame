@@ -3,7 +3,7 @@
 #include"program.h"
 
 
-class PrimaryProg:public Program
+class PrimaryProg: public Program
 {
 private:
     sf::RectangleShape _primprog;
@@ -11,7 +11,7 @@ private:
 public:
     PrimaryProg();
      std::vector<Action *>  addAction(Action &action) override;
-     std::vector<Action *> removeAction(std::vector<Action *>)override;
+     std::vector<Action *> removeAction(Action &action)override;
      void drawPrimProg(sf::RenderWindow &window);
 };
 

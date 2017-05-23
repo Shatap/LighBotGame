@@ -37,3 +37,8 @@ void Hexagon::setPosition(sf::Vector2f pos)
 {
     _hexa.setPosition(pos);
 }
+
+void Hexagon::getCenter()
+{
+//    _hexa.getOrigin();
+}
