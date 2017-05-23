@@ -10,10 +10,12 @@ Level::Level(sf::RenderWindow &window)
     _grid = new Grid();
 
     _secProg = new ExecSecProg(1200,500,Type_Action::sec_prog);
-    _changeAltitude = new Action(1200,400,Type_Action::change_altitude);
+    _changeAltitude = new Action(1200,400,Type_Action::change_Altitude);
     _forward = new Action(1200,300,Type_Action::forward);
-    _rotation = new Action(1200,200,Type_Action::rotate);
+    _rotation_Left = new Action(1000,400,Type_Action::rotate_Left);
+    _rotation_Right = new Action(1000,200,Type_Action::rotate_Right);
     _primaryProg = new PrimaryProg();
+
 
     _quit.setFillColor(sf::Color::Red);
     _quit.setPosition(1200,700);
@@ -22,10 +24,12 @@ Level::Level(sf::RenderWindow &window)
     _actionPannel.push_back(_secProg);
     _actionPannel.push_back(_changeAltitude);
     _actionPannel.push_back(_forward);
-    _actionPannel.push_back(_rotation);
+    _actionPannel.push_back(_rotation_Right);
+    _actionPannel.push_back(_rotation_Right);
+
 
     _robot = new Robot();
-    std::cout<< _grid->getGrid().at(0)->getPosition().x <<std::endl;
+    //  std::cout<< _grid->getGrid().at(2)->getPosition().x <<std::endl;
 }
 //bool Level::quit()
 //{
@@ -37,32 +41,26 @@ void Level::loop()
 {
     _window.clear(sf::Color::White);
     _forward->displayAction(_window);
-    _rotation->displayAction(_window);
+    _rotation_Left->displayAction(_window);
+    _rotation_Right->displayAction(_window);
     _changeAltitude->displayAction(_window);
     _secProg->displayAction(_window);
     _grid->display(_window);
     displayLevelButtons();
     _robot->draw_bot(_window);
-
-    //        if(sf::Event::MouseButtonPressed)
-    //        {
-    //            setMousePos(event.mouseButton.x,event.mouseButton.y);
-    //            std::cout<<_mouse.x<<std::endl;
-    //        }
-
-
-
-    _rotation->displayAction(_window);
-    _forward->displayAction(_window);
-    _changeAltitude->displayAction(_window);
     _primaryProg->drawPrimProg(_window);
+
+
+
     mouse_button_pressed();
-    _robot->setPosition(_grid->getGrid().at(10));
-    std::cout<< "POSITIONNN : " << _grid->getGrid().at(0)->getPosition().x <<std::endl;
-    std::cout<< "ORIGINE " << _grid->getGrid().at(0)->getPosition().x <<std::endl;
+    std::cout<< "POSITIONNN : " << _grid->getGrid().at(2)->getPosition().x <<std::endl;
+    std::cout<< "ORIGINE " << _grid->getGrid().at(2)->getPosition().x <<std::endl;
 
-
+    _robot->setPosition( *_grid->getGrid().at(2));
+    //_rotation->setRotation(*_robot);
+    std::cout << "X ROBOT " <<_robot->getPosition().x << std::endl;
     _window.display();
+
 
 
 
@@ -75,7 +73,7 @@ void Level::mouse_button_pressed()
     {
         mousedown = true;
         std::cout << mousedown << std::endl;
-        Action  *_CA = new Action(45,45,Type_Action::change_altitude);
+        Action  *_CA = new Action(45,45,Type_Action::change_Altitude);
         _actionPannel.push_back(_CA);
         std::cout<<"CHANGE ALTITUDE" << std::endl;
 
@@ -88,13 +86,15 @@ void Level::mouse_button_pressed()
 
     }
 
-    if(_rotation->getDimension().getGlobalBounds().contains(_mouse) && sf::Event::MouseButtonPressed)
+    if(_rotation_Left->getDimension().getGlobalBounds().contains(_mouse) && sf::Event::MouseButtonPressed)
     {
-        Action  *_AR= new Action(45,45,Type_Action::rotate);
+        Action  *_AR= new Action(45,45,Type_Action::rotate_Left);
         _actionPannel.push_back(_AR);
         std::cout<<"ROTATE" << std::endl;
 
     }
+
+
 
     if(_quit.getGlobalBounds().contains(_mouse))
     {

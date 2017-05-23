@@ -2,7 +2,7 @@
 #define ACTION_H
 #include <SFML/Graphics.hpp>
 #include "robot.h"
-enum class Type_Action{forward,rotate,change_altitude,sec_prog};
+enum class Type_Action{forward,rotate_Right,rotate_Left,change_Altitude,sec_prog,light_Hex};
 class Action
 {
 private:
@@ -12,12 +12,13 @@ private:
     const int _ACT_WIDTH=70;
     Type_Action _typeAction;
     bool _isClicked;
+    sf::RectangleShape _recAction;
 
 
 public:
-    sf::RectangleShape _recAction;
     Action(int x,int y,Type_Action t);
-    void setRotation(Robot  &r);
+    void setRotationLeft(Robot  &r);
+    void setRotationRight(Robot &r);
     void changeAltitude(Robot  &r);
     void moveForward(Robot  &r);
     void displayAction(sf::RenderWindow  & window);

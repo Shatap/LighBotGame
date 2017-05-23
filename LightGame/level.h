@@ -19,7 +19,8 @@ private:
     std::vector<Action *> _actionPannel;
     Grid * _grid;
     float _score;
-    Action *_rotation ;
+    Action *_rotation_Left ;
+    Action *_rotation_Right;
     Action *_forward ;
     Action *_changeAltitude ;
     ExecSecProg  *_secProg;

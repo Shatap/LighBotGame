@@ -19,7 +19,13 @@ public:
     bool isMoving();
     int getAngle();
     int getAltitude();
-    void setPosition(Hexagon *hex );
+    void setPosition(const Hexagon  &hex );
+    void setRotationRight();
+    void setRotationLeft();
+
+
+
+    sf::Vector2f getPosition();
 };
 
 #endif // ROBOT_H

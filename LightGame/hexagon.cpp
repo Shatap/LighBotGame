@@ -36,10 +36,8 @@ void Hexagon::setPosition(sf::Vector2f pos)
     _hexa.setPosition(pos);
 }
 
-sf::CircleShape Hexagon::getHex()
+sf::CircleShape Hexagon::getHex() const
 {
 return this->_hexa;
-
-
 
 }

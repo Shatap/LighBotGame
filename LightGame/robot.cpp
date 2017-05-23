@@ -7,7 +7,7 @@ Robot::Robot()
     _robot.setOutlineColor(sf::Color::Green);
     _robot.setOutlineThickness(4);
     _robot.setPosition(120, 145);
-    _robot.setRadius(12);
+    _robot.setRadius(8);
 
 
 }
@@ -22,7 +22,24 @@ void Robot::bot_in_hex()
 
 }
 
-void Robot::setPosition(Hexagon * hex)
+void Robot::setPosition(const Hexagon & hex)
 {
-    this->_robot.setPosition(hex->getHex().getOrigin());
+    _robot.setPosition({hex.getHex().getPosition().x-5,hex.getHex().getPosition().y+5});
 }
+
+void Robot::setRotationRight()
+{
+    this->_robot.setRotation(45);
+}
+void Robot::setRotationLeft()
+{
+    this->_robot.setRotation(-45);
+}
+
+
+sf::Vector2f Robot::getPosition()
+{
+    return this->_robot.getPosition();
+}
+
+
