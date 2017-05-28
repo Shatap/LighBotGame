@@ -23,11 +23,12 @@ private:
     Action *_rotation_Right;
     Action *_forward ;
     Action *_changeAltitude ;
+    Action *_light;
     ExecSecProg  *_secProg;
     sf::RectangleShape _quit;
+    sf::RectangleShape _play;
+    sf::RectangleShape _deleteVectorProg;
     bool _isRunning = true;
-    sf::FloatRect _QUIT_DIM ;
-  //  sf::Vector2i _mouse;
     PrimaryProg * _primaryProg;
     Robot *_robot;
 
@@ -35,10 +36,11 @@ public:
     Level();
     Level(sf::RenderWindow& window);
     float setScore();
-    float getScore();
+    float getScore() const;
     bool quit();
     void goToNextLevel();
     void replay();
+    void launch_exec();
     void pause_exec();
     void loop() override;
     void displayLevelButtons();

@@ -19,7 +19,7 @@ public:
     Grid();
     ~Grid();
     void display(sf::RenderWindow &window);
-    std::vector<Hexagon *> getGrid();
+    std::vector<Hexagon *> getGrid() const;
 
 
 };

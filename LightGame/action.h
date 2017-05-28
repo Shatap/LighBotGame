@@ -11,20 +11,25 @@ private:
     const int _ACT_HEIGHT=40;
     const int _ACT_WIDTH=70;
     Type_Action _typeAction;
-    bool _isClicked;
     sf::RectangleShape _recAction;
+    int _rotateRate;
 
 
 public:
     Action(int x,int y,Type_Action t);
+    ~Action();
     void setRotationLeft(Robot  &r);
     void setRotationRight(Robot &r);
     void changeAltitude(Robot  &r);
     void moveForward(Robot  &r);
+    void lightHex(Robot &r);
     void displayAction(sf::RenderWindow  & window);
-    //void executeAction();
+    sf::Texture getTexture();
+    void setTexture(sf::Texture &t);
+    void executeAction(Robot &r);
     sf::RectangleShape getDimension() const;
-
+    void deleteAction();
+    int getRotateRate() const;
 };
 
 #endif // ACTION_H

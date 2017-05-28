@@ -12,6 +12,7 @@ class Robot
 private:
     sf::CircleShape _robot;
     Hexagon *_currenthex;
+    int _rate;
 public:
     Robot();
     void draw_bot(sf::RenderWindow &w);
@@ -19,9 +20,11 @@ public:
     bool isMoving();
     int getAngle();
     int getAltitude();
-    void setPosition(const Hexagon  &hex );
+    void setPosition( );
     void setRotationRight();
     void setRotationLeft();
+    sf::CircleShape getRobot();
+    void setPosManually(sf::Vector2f);
 
 
 

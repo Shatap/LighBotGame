@@ -6,12 +6,13 @@ Hexagon::Hexagon(float size, sf::Color color)
     :_size{size},_color{color}
 
 {
+
     _hexa.setPointCount(6);
     _hexa.setRadius(size);
     _hexa.setFillColor(color);
     _hexa.setOutlineThickness(2);
     _hexa.setRotation(30);
-    _hexa.setOrigin(_hexa.getPosition().x+20,_hexa.getPosition().y+20);
+    _hexa.setOrigin(30,30);
 
 
 }
@@ -41,3 +42,4 @@ sf::CircleShape Hexagon::getHex() const
 return this->_hexa;
 
 }
+

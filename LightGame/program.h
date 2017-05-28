@@ -12,8 +12,8 @@ private:
     Action* _action;
 public:
     Program();
-    virtual std::vector<Action *>  addAction(Action &action)=0;
-    virtual std::vector<Action *>  removeAction(Action &action)=0;
+    virtual void  addAction(Action &action)=0;
+    virtual void  removeAction(Action &action)=0;
 
 };
 
