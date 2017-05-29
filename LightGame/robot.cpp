@@ -17,8 +17,7 @@ Robot::Robot():_rate{0}
 void Robot::draw_bot(sf::RenderWindow &w)
 {
     sf::Texture texture;
-    _robot.setFillColor(sf::Color::Black);
-    texture.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/arrow.png");
+    texture.loadFromFile("../LightGame/Sources/robot.png");
     _robot.setTexture(&texture);
     w.draw(_robot);
 }

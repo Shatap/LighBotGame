@@ -11,21 +11,26 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setSize(sf::Vector2f(_ACT_WIDTH,_ACT_HEIGHT ));
     _recAction.setOutlineThickness(2);
     _recAction.setOutlineColor(sf::Color::Black);
+    _Forward.loadFromFile("../LightGame/Sources/arrow.png");
+    _Rotateleft.loadFromFile("../LightGame/Sources/RotateLeft.png");
+    _Rotateright.loadFromFile("../LightGame/Sources/RotateRight.png");
+    _Lightitup.loadFromFile("../LightGame/Sources/Light.png");
+
 
     switch(t)
     {
     case  Type_Action::forward:
-        _recAction.setFillColor(sf::Color::Cyan);
+        _recAction.setTexture(&_Forward, false);
 
         break;
     case Type_Action::rotate_Left:
-        _recAction.setFillColor(sf::Color::Blue);
+        _recAction.setTexture(&_Rotateleft, false);
         break;
     case  Type_Action::rotate_Right:
-        _recAction.setFillColor(sf::Color::Yellow);
+        _recAction.setTexture(&_Rotateright, false);
         break;
     case Type_Action::light_Hex:
-        _recAction.setFillColor(sf::Color::Magenta);
+        _recAction.setTexture(&_Lightitup, false);
         break;
 
     case Type_Action::sec_prog:

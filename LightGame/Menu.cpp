@@ -21,7 +21,7 @@ Menu::Menu(sf::RenderWindow &window)
     _text_quit.setFont(_button_font);
     _text_quit.setCharacterSize(60);
     _text_quit.setString("QUIT");
-    if(!_texture.loadFromFile("/mnt/roon/users/wreeves/LightbotTitle.png"))
+    if(!_texture.loadFromFile("../LightGame/Sources/LightbotTitle.png"))
     {
         std::cout << "uh ooooooooooh" << std::endl;
     }

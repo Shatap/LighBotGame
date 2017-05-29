@@ -13,6 +13,10 @@ private:
     Type_Action _typeAction;
     sf::RectangleShape _recAction;
     int _rotateRate;
+    sf::Texture _Forward;
+    sf::Texture _Rotateleft;
+    sf::Texture _Rotateright;
+    sf::Texture _Lightitup;
 
 
 public:
