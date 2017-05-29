@@ -204,20 +204,4 @@ void Level::displayLevelButtons()
 
 
 
-//bool Level::isMouseInEntity(const sf::Vector2i &mouse, const sf::FloatRect &entity)
-//{
 
-//    return  (mouse.y>=(entity.top) &&
-//            (mouse.y <=entity.top+entity.height)&&
-//            (mouse.x>=entity.left)&&
-//            (mouse.x <=entity.left+entity.width));
-//       std::cout << " EZZZZZZZZZZZZZZZ";
-
-//}
-
-//void Level::setMousePos(int x,int y)
-//{
-//    auto pos = _window.mapPixelToCoords( {x, y});
-//    _mouse = { pos.x, pos.y };
-
-//}

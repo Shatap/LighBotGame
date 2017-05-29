@@ -13,6 +13,7 @@ private:
     sf::CircleShape _robot;
     Hexagon *_currenthex;
     int _rate;
+    float const PI = 3.1415926;
 public:
     Robot();
     void draw_bot(sf::RenderWindow &w);

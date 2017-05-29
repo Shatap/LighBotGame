@@ -24,13 +24,13 @@ void PrimaryProg::removeAction(Action &action)
 
 void PrimaryProg::resetVector()
 {
- for(Action *a : _progActions)
- {
-     a->deleteAction();
- }
- this->_progActions.erase(_progActions.cbegin(),_progActions.cend());
- _shift_X = _x_Pos;
- _shift_Y=_y_Pos;
+    for(Action *a : _progActions)
+    {
+        a->deleteAction();
+    }
+    this->_progActions.erase(_progActions.cbegin(),_progActions.cend());
+    _shift_X = _x_Pos;
+    _shift_Y=_y_Pos;
 }
 
 void PrimaryProg::drawPrimProg(sf::RenderWindow & window)
@@ -87,11 +87,10 @@ int PrimaryProg::getShift_Y() const
 bool PrimaryProg::isComplete()
 {
     if(_shift_Y >= (PROG_WIDTH+((43)*3)))
-   {
+    {
 
         return true == (_shift_Y >= (PROG_WIDTH+((43)*3)));
     }
-
 }
 
 

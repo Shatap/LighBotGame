@@ -97,7 +97,7 @@ void Action::displayAction(sf::RenderWindow &window)
 
 sf::Texture  Action::getTexture()
 {
-    Type_Action t = this->_typeAction;
+   /* Type_Action t = this->_typeAction;
     switch(t)
     {
     case  Type_Action::forward:
@@ -125,7 +125,8 @@ sf::Texture  Action::getTexture()
         _recAction.setFillColor(sf::Color::Green);
         break;
 
-    }
+
+    }*/
 }
 
 void Action::setTexture(sf::Texture &t)
