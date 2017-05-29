@@ -18,6 +18,8 @@ public:
     sf::Vector2f getPosition();
     void setPosition(sf::Vector2f pos);
     sf::CircleShape getHex() const;
+    sf::Color getColor();
+    void setColor(sf::Color c);
 };
 
 #endif // HEXAGON_H

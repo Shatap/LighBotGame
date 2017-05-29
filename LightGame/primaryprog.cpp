@@ -45,11 +45,12 @@ std::vector<Action * > PrimaryProg::getPrimProg()
     return this->_progActions;
 }
 
-void PrimaryProg::executePrimProg(sf::RenderWindow &w, Robot &r)
+void PrimaryProg::executePrimProg(sf::RenderWindow &w, Robot &r,Grid & g)
 {
     for(Action *a : _progActions)
     {
-        a->executeAction(r);
+
+        a->executeAction(r,g,w);
         r.draw_bot(w);
     }
 }

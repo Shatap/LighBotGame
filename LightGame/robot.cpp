@@ -22,9 +22,28 @@ void Robot::draw_bot(sf::RenderWindow &w)
     w.draw(_robot);
 }
 
-void Robot::bot_in_hex()
+bool Robot::bot_in_hex(Grid & g)
 {
 
+}
+
+void Robot::lightHex(Grid &g, sf::RenderWindow &w)
+{
+    std::vector<Hexagon *> h = g.getGrid();
+         for(Hexagon *he :h)
+         {
+            if (he->getHex().getGlobalBounds().contains(this->getPosition()))
+            {
+                if(he->getHex().getFillColor() == sf::Color::Blue)
+                {
+
+                    std::cout << "he->getHex().getFillAZDAZDAZDAZDAZDAZDAZDAZDColor()" << std::endl<< std::endl<< std::endl<< std::endl<< std::endl<< std::endl;
+                }
+                he->setColor(sf::Color::Red);
+                he->DrawHex(w);
+
+            }
+         }
 }
 
 void Robot::setPosition()
@@ -51,6 +70,8 @@ void Robot::setPosition()
 
     case 3:
     case -3:
+        _robot.setPosition({getPosition().x-((30*cos(PI/3))+30),getPosition().y-(30*sin((PI)/3))});
+
         break;
 
     case 4:

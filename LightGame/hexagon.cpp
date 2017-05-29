@@ -43,3 +43,13 @@ return this->_hexa;
 
 }
 
+sf::Color Hexagon::getColor()
+{
+    return this->_color;
+}
+
+void Hexagon::setColor(sf::Color c)
+{
+    _hexa.setFillColor(c);
+}
+

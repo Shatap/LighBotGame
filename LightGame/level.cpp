@@ -42,6 +42,7 @@ Level::Level(sf::RenderWindow &window)
     _robot->setPosManually(_grid->getGrid().at(0)->getPosition());
 
     //  std::cout<< _grid->getGrid().at(2)->getPosition().x <<std::endl;
+
 }
 
 void Level::launch_exec()
@@ -179,7 +180,7 @@ void Level::mouse_button_pressed()
     }
     if(_play.getGlobalBounds().contains(_mouse))
     {
-        _primaryProg->executePrimProg(_window,*_robot);
+        _primaryProg->executePrimProg(_window,*_robot,*_grid);
 
     }
 

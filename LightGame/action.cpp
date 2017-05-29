@@ -12,25 +12,25 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setOutlineThickness(2);
     _recAction.setOutlineColor(sf::Color::Black);
     _Forward.loadFromFile("../LightGame/Sources/arrow.png");
-    _Rotateleft.loadFromFile("../LightGame/Sources/RotateLeft.png");
-    _Rotateright.loadFromFile("../LightGame/Sources/RotateRight.png");
-    _Lightitup.loadFromFile("../LightGame/Sources/Light.png");
+    _RotateLeft.loadFromFile("../LightGame/Sources/RotateLeft.png");
+    _RotateRight.loadFromFile("../LightGame/Sources/RotateRight.png");
+    _LightItUp.loadFromFile("../LightGame/Sources/Light.png");
 
 
     switch(t)
     {
     case  Type_Action::forward:
-        _recAction.setTexture(&_Forward, false);
+        _recAction.setTexture(&_Forward);
 
         break;
     case Type_Action::rotate_Left:
-        _recAction.setTexture(&_Rotateleft, false);
+        _recAction.setTexture(&_RotateLeft );
         break;
     case  Type_Action::rotate_Right:
-        _recAction.setTexture(&_Rotateright, false);
+        _recAction.setTexture(&_RotateRight);
         break;
     case Type_Action::light_Hex:
-        _recAction.setTexture(&_Lightitup, false);
+        _recAction.setTexture(&_LightItUp);
         break;
 
     case Type_Action::sec_prog:
@@ -85,16 +85,13 @@ void Action::moveForward(Robot  &r)
     }
 }
 
-void Action::lightHex(Robot &r)
+void Action::lightHex(Robot &r, Grid &g,sf::RenderWindow &w)
 {
-
+        r.lightHex(g,w);
 }
 
 void Action::displayAction(sf::RenderWindow &window)
 {
-
-    Type_Action t = this->_typeAction;
-
 
       window.draw(_recAction);
 
@@ -157,7 +154,7 @@ int Action::getRotateRate() const
 
 
 
-void Action::executeAction(Robot & r)
+void Action::executeAction(Robot & r, Grid &g,sf::RenderWindow &w)
 {
     Type_Action t;
     t= this->_typeAction;
@@ -174,7 +171,7 @@ void Action::executeAction(Robot & r)
         setRotationRight(r);
         break;
     case Type_Action::light_Hex:
-        lightHex(r);
+        lightHex(r,g,w);
         break;
 
     case Type_Action::sec_prog:
