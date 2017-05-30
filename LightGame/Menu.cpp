@@ -21,13 +21,13 @@ Menu::Menu(sf::RenderWindow &window)
     _text_quit.setFont(_button_font);
     _text_quit.setCharacterSize(60);
     _text_quit.setString("QUIT");
-    if(!_texture.loadFromFile("../LightGame/Sources/LightbotTitle.png"))
+    if(!_texture.loadFromFile("../LightGame/Sources/LightGameTitle.png"))
     {
         std::cout << "uh ooooooooooh" << std::endl;
     }
 
     _sprite.setTexture(_texture);
-    _sprite.setPosition(190, 100);
+    _sprite.setPosition(125,-150);
 }
 
 
