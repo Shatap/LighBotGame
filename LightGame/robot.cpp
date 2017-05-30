@@ -4,12 +4,12 @@ Robot::Robot():_rate{0}
 {
     _robot.setOutlineColor(sf::Color::Green);
     _robot.setOutlineThickness(4);
-    _robot.setRadius(10);
+    _robot.setRadius(15);
     _robot.setPosition({60,80});
     _robot.setOrigin({20,20});
     _robot.setFillColor(sf::Color::Yellow);
 
-//    _robot.rotate(60);
+    _robot.rotate(100);
 
 
 
@@ -40,8 +40,7 @@ void Robot::lightHex(Grid &g, sf::RenderWindow &w)
 
                     he->setColor(sf::Color::Red);
                     he->DrawHex(w);
-                    std::cout<< he->getPosition().x << std::endl;
-                    std::cout<< he->getPosition().y << std::endl;
+
                 }
 
             }
