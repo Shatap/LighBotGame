@@ -21,7 +21,7 @@ public:
     bool isMoving();
     int getAngle();
     int getAltitude();
-    void setPosition( );
+    void setPosition();
     void setRotationRight();
     void setRotationLeft();
     sf::CircleShape getRobot();

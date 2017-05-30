@@ -12,7 +12,6 @@ PrimaryProg::PrimaryProg()
 void PrimaryProg::addAction(Action  &action)
 {
     _progActions.push_back(&action);
-
 }
 
 

@@ -48,8 +48,6 @@ Grid::Grid()
                 _prevPosY2=_grid.back()->getPosition().y;
                 _hex->setPosition({_prevPosX2+30+(30*cos((3.14/3))),_prevPosY2-30.*sin((3.14/3))});
                 _grid.push_back(_hex);
-
-                std::cout << " n cases: " << _grid.size() << std::endl;
             }
 
 

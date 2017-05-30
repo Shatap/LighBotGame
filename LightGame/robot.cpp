@@ -8,7 +8,7 @@ Robot::Robot():_rate{0}
     _robot.setPosition({60,80});
     _robot.setOrigin({20,20});
 
-    _robot.rotate(30);
+//    _robot.rotate(60);
 
 
 
@@ -29,7 +29,7 @@ void Robot::bot_in_hex()
 
 void Robot::setPosition()
 {
-
+        std::cout << "big booty babes " << _rate << std::endl;
     switch(_rate)
     {
     case 0:
@@ -92,23 +92,30 @@ void Robot::setPosition()
 
 void Robot::setRotationRight()
 {
-    _rate ++ ;
-    this->_robot.setRotation(60);
-    if(_rate > 5)
-        _rate = 0;
-}
-void Robot::setRotationLeft()
-{
-
     _rate --;
     this->_robot.rotate(60);
     if(_rate < -5)
         _rate = 0;
-
+//    _rate ++;
+//    this->_robot.rotate(60);
+//    if(_rate > 5)
+//        _rate = 0;
+}
+void Robot::setRotationLeft()
+{
+        _rate ++;
+        this->_robot.rotate(60);
+        if(_rate > 5)
+            _rate = 0;
+//    _rate --;
+//    this->_robot.rotate(60);
+//    if(_rate < -5)
+//        _rate = 0;
 }
 
 void Robot::setPosManually(sf::Vector2f f)
 {
+    _rate= 0;
     _robot.setPosition(f);
 }
 
