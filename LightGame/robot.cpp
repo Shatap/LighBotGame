@@ -18,8 +18,9 @@ Robot::Robot():_rate{0}
 void Robot::draw_bot(sf::RenderWindow &w)
 {
     sf::Texture texture;
-    texture.loadFromFile("../LightGame/Sources/robot.png");
+    texture.loadFromFile("../LightGame/Sources/New Piskel-1(5).png");
     _robot.setTexture(&texture);
+    _robot.setScale(3,3);
     w.draw(_robot);
 }
 
