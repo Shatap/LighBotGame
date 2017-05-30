@@ -2,12 +2,9 @@
 
 Robot::Robot():_rate{0}
 {
-    _robot.setOutlineColor(sf::Color::Green);
-    _robot.setOutlineThickness(4);
     _robot.setRadius(15);
     _robot.setPosition({60,80});
     _robot.setOrigin({20,20});
-    _robot.setFillColor(sf::Color::Yellow);
 
     _robot.rotate(100);
 
@@ -18,7 +15,7 @@ Robot::Robot():_rate{0}
 void Robot::draw_bot(sf::RenderWindow &w)
 {
     sf::Texture texture;
-    texture.loadFromFile("../LightGame/Sources/New Piskel-1(5).png");
+    texture.loadFromFile("../LightGame/Sources/MainSprite.png");
     _robot.setTexture(&texture);
     _robot.setScale(3,3);
     w.draw(_robot);

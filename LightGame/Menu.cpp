@@ -6,11 +6,11 @@ Menu::Menu(sf::RenderWindow &window)
     : Application(window)
 {
     _window.setTitle("Lightbot: Learn to code!");
-    _button_font.loadFromFile("../LightGame/Sources/PenguinAttack.ttf");
-    _playbutton.setPosition(425, 400);
+    _button_font.loadFromFile("../LightGame/Sources/8bitOperatorPlusSC-Bold.ttf");
+    _playbutton.setPosition(475, 400);
     _playbutton.setFillColor(sf::Color::Green);
     _playbutton.setSize(sf::Vector2f(_PLAY_WIDTH, _PLAY_HEIGHT));
-    _quitbutton.setPosition(425, 500);
+    _quitbutton.setPosition(475, 500);
     _quitbutton.setFillColor(sf::Color::Red);
     _quitbutton.setSize(sf::Vector2f(_QUIT_WIDTH, _QUIT_HEIGHT));
     _text_play.setPosition(425, 395);
@@ -25,7 +25,11 @@ Menu::Menu(sf::RenderWindow &window)
     {
         std::cout << "uh ooooooooooh" << std::endl;
     }
-
+    if(!_backgroundtexture.loadFromFile("../LightGame/Sources/background.png"))
+    {
+        std::cout << "whoopsy daisy " << std::endl;
+    }
+    _background.setTexture(_backgroundtexture);
     _sprite.setTexture(_texture);
     _sprite.setPosition(125,-150);
 }
