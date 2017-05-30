@@ -25,7 +25,7 @@ public:
     void setRotationLeft(Robot  &r);
     void setRotationRight(Robot &r);
     void changeAltitude(Robot  &r);
-    void moveForward(Robot  &r);
+    void moveForward(Robot  &r, Grid &g);
     void lightHex(Robot &r, Grid &g, sf::RenderWindow &w);
     void displayAction(sf::RenderWindow  & window);
     sf::Texture getTexture();

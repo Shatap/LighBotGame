@@ -11,10 +11,10 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setSize(sf::Vector2f(_ACT_WIDTH,_ACT_HEIGHT ));
     _recAction.setOutlineThickness(2);
     _recAction.setOutlineColor(sf::Color::Black);
-    _Forward.loadFromFile("../LightGame/Sources/arrow.png");
-    _RotateLeft.loadFromFile("../LightGame/Sources/RotateLeft.png");
-    _RotateRight.loadFromFile("../LightGame/Sources/RotateRight.png");
-    _LightItUp.loadFromFile("../LightGame/Sources/Light.png");
+    _Forward.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/arrow.png");
+    _RotateLeft.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/RotateLeft.png");
+    _RotateRight.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/RotateRight.png");
+    _LightItUp.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/Light.png");
 
 
     switch(t)
@@ -76,11 +76,11 @@ void Action::changeAltitude(Robot  &r)
 
 }
 
-void Action::moveForward(Robot &r)
+void Action::moveForward(Robot &r,Grid & g)
 {
     if(this->_typeAction == Type_Action::forward)
     {
-        r.setPosition();
+        r.setPosition(g);
     }
 }
 
@@ -161,7 +161,7 @@ void Action::executeAction(Robot & r, Grid &g,sf::RenderWindow &w)
     switch(t)
     {
     case  Type_Action::forward:
-        moveForward(r);
+        moveForward(r,g);
         break;
     case Type_Action::rotate_Left:
         setRotationLeft(r);
