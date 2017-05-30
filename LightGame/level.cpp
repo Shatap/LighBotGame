@@ -176,6 +176,7 @@ void Level::mouse_button_pressed()
         _primaryProg->resetVector();
         std::cout<< "POSITION HEX 1 : " <<_grid->getGrid().back()->getPosition().x << std::endl;
         _robot->setPosManually({_grid->getGrid().at(0)->getPosition()});
+//        _robot->
 
     }
     if(_play.getGlobalBounds().contains(_mouse))

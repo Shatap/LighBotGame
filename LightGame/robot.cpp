@@ -8,7 +8,7 @@ Robot::Robot():_rate{0}
     _robot.setPosition({60,80});
     _robot.setOrigin({20,20});
 
-    _robot.rotate(30);
+//    _robot.rotate(60);
 
 
 
@@ -48,8 +48,12 @@ void Robot::lightHex(Grid &g, sf::RenderWindow &w)
 
 void Robot::setPosition()
 {
+<<<<<<< HEAD
 
 
+=======
+        std::cout << "big booty babes " << _rate << std::endl;
+>>>>>>> bd26896c180eb82df036e0d037e710d13efb40f2
     switch(_rate)
     {
     case 0:
@@ -91,23 +95,30 @@ void Robot::setPosition()
 
 void Robot::setRotationRight()
 {
-    _rate ++ ;
-    this->_robot.setRotation(60);
-    if(_rate > 5)
-        _rate = 0;
-}
-void Robot::setRotationLeft()
-{
-
     _rate --;
     this->_robot.rotate(60);
     if(_rate < -5)
         _rate = 0;
-
+//    _rate ++;
+//    this->_robot.rotate(60);
+//    if(_rate > 5)
+//        _rate = 0;
+}
+void Robot::setRotationLeft()
+{
+        _rate ++;
+        this->_robot.rotate(60);
+        if(_rate > 5)
+            _rate = 0;
+//    _rate --;
+//    this->_robot.rotate(60);
+//    if(_rate < -5)
+//        _rate = 0;
 }
 
 void Robot::setPosManually(sf::Vector2f f)
 {
+    _rate= 0;
     _robot.setPosition(f);
 }
 

@@ -55,7 +55,7 @@ void Action::setRotationLeft(Robot &r)
 {
     if(this->_typeAction == Type_Action::rotate_Left)
     {
-        _rotateRate ++;
+        _rotateRate++;
         r.setRotationLeft();
     }
 
@@ -63,9 +63,9 @@ void Action::setRotationLeft(Robot &r)
 
 void Action::setRotationRight(Robot &r)
 {
-    if(this->_typeAction == Type_Action::rotate_Left)
+    if(this->_typeAction == Type_Action::rotate_Right)
     {
-        _rotateRate --;
+        _rotateRate--;
         r.setRotationRight();
     }
 }
@@ -76,11 +76,10 @@ void Action::changeAltitude(Robot  &r)
 
 }
 
-void Action::moveForward(Robot  &r)
+void Action::moveForward(Robot &r)
 {
     if(this->_typeAction == Type_Action::forward)
     {
-
         r.setPosition();
     }
 }
@@ -136,7 +135,7 @@ void Action::setTexture(sf::Texture &t)
     this->_recAction.setTexture(&t);
 }
 
-sf::RectangleShape  Action::getDimension() const
+sf::RectangleShape Action::getDimension() const
 {
     return  _recAction;
 }

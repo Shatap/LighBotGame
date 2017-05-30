@@ -22,7 +22,7 @@ public:
     void lightHex(Grid &g, sf::RenderWindow &w);
     int getAngle();
     int getAltitude();
-    void setPosition( );
+    void setPosition();
     void setRotationRight();
     void setRotationLeft();
     sf::CircleShape getRobot();
