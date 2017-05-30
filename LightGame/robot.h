@@ -14,6 +14,9 @@ private:
     Hexagon *_currenthex;
     int _rate;
     float const PI = 3.1415926;
+    sf::Texture _downTexture;
+    sf::Texture _sideTexture;
+    bool _textureChange;
 public:
     Robot();
     void draw_bot(sf::RenderWindow &w);
@@ -27,6 +30,7 @@ public:
     void setRotationLeft();
     sf::CircleShape getRobot();
     void setPosManually(sf::Vector2f);
+    void setTexture(sf::Texture &t);
 
 
 

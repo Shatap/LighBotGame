@@ -16,18 +16,28 @@ Level::Level(sf::RenderWindow &window)
     _rotation_Right = new Action(1200,320,Type_Action::rotate_Right);
     _light = new Action(1200,400,Type_Action::light_Hex);
     _primaryProg = new PrimaryProg();
+    _color =  sf::Color(253,233,224);
 
 
-    _quit.setFillColor(sf::Color::Red);
-    _quit.setPosition(1200,600);
-    _quit.setSize({60,40});
 
-    _play.setFillColor(sf::Color::Black);
-    _play.setPosition(1200,650);
-    _play.setSize({60,40});
+    _quit.setPosition(1150,600);
+    _quit.setSize({120,80});
+
+    if(!_textureQuit.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/quit.png"))
+            std::cerr << "cant load image from path " << std::endl;
+
+    _textureQuit.setSmooth(true);
+
+
+
+
+
+
+    _play.setPosition(1100,650);
+    _play.setSize({80,60});
 
     _deleteVectorProg.setFillColor(sf::Color::Yellow);
-    _deleteVectorProg.setPosition(1100,650);
+    _deleteVectorProg.setPosition(1200,700);
     _deleteVectorProg.setSize({60,40});
 
     _actionPannel.push_back(_secProg);
@@ -64,7 +74,7 @@ void Level::launch_exec()
 
 void Level::loop()
 {
-    _window.clear(sf::Color::White);
+    _window.clear(_color);
     _forward->displayAction(_window);
     _rotation_Left->displayAction(_window);
     _rotation_Right->displayAction(_window);
@@ -78,25 +88,9 @@ void Level::loop()
 
 
 
-  //  mouse_button_pressed();
     launch_exec();
-    //  std::cout<< "POSITIONNN : " << _grid->getGrid().at(2)->getPosition().x <<std::endl;
-    // std::cout<< "ORIGINE " << _grid->getGrid().at(2)->getPosition().x <<std::endl;
 
-
-    // std::cout << "X ROBOT " <<_robot->getPosition().x << std::endl;
-    //  launch_exec();
     _window.display();
-
-
-
-    //***** IMPLEMENTEZ UN BOUTON PLAY , QUI PARCOUR ET EXEC LE VECTEUR /////
-
-
-
-
-
-
 
 }
 
@@ -175,8 +169,8 @@ void Level::mouse_button_pressed()
     {
         _primaryProg->resetVector();
         std::cout<< "POSITION HEX 1 : " <<_grid->getGrid().back()->getPosition().x << std::endl;
-        _robot->setPosManually({_grid->getGrid().at(0)->getPosition()});
-//        _robot->
+        _robot->setPosManually({_grid->getGrid().at(9)->getPosition()});
+
 
     }
     if(_play.getGlobalBounds().contains(_mouse))
@@ -197,8 +191,9 @@ void Level::mouse_button_released()
 
 void Level::displayLevelButtons()
 {
-    _window.draw(_play);
+    _quit.setTexture(&_textureQuit);
 
+    _window.draw(_play);
     _window.draw(_quit);
     _window.draw(_deleteVectorProg);
 

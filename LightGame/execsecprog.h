@@ -4,6 +4,8 @@
 
 class ExecSecProg:public Action
 {
+private:
+    std::vector<Action *> _secProg;
 public:
     ExecSecProg(int x, int y,Type_Action t);
 

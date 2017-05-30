@@ -2,26 +2,40 @@
 
 Robot::Robot():_rate{0}
 {
-    _robot.setOutlineColor(sf::Color::Green);
-    _robot.setOutlineThickness(4);
-    _robot.setRadius(15);
-    _robot.setPosition({60,80});
-    _robot.setOrigin({20,20});
-    _robot.setFillColor(sf::Color::Yellow);
+    _robot.setRadius(10);
+    _robot.setPosition({30,40});
+    _robot.setOrigin({10,10});
 
-    _robot.rotate(100);
+    _robot.rotate(30);
+    _robot.setScale(6,6);
 
 
+    _sideTexture.loadFromFile("../LightGame/Sources/compass.png");
+    _downTexture.loadFromFile("../LightGame/Sources/DownSprite.png");
 
 }
 
 void Robot::draw_bot(sf::RenderWindow &w)
 {
-    sf::Texture texture;
-    texture.loadFromFile("../LightGame/Sources/New Piskel-1(5).png");
-    _robot.setTexture(&texture);
-    _robot.setScale(3,3);
-    w.draw(_robot);
+
+
+        if(_textureChange)
+        {
+            setTexture(_sideTexture);
+            w.draw(_robot);
+
+        }
+
+        else
+        {
+            setTexture(_downTexture);
+std::cout << " AIZUDB AI9ZUDH AIUZHD IUAZHDI UHAZIUDH A ";
+            w.draw(_robot);
+            _textureChange = true;
+        }
+
+
+
 }
 
 bool Robot::bot_in_hex(Grid & g)
@@ -32,24 +46,25 @@ bool Robot::bot_in_hex(Grid & g)
 void Robot::lightHex(Grid &g, sf::RenderWindow &w)
 {
     std::vector<Hexagon *> h = g.getGrid();
-         for(Hexagon *he :h)
-         {
-            if (he->getHex().getGlobalBounds().contains(this->getPosition()))
+    for(Hexagon *he :h)
+    {
+        if (he->getHex().getGlobalBounds().contains(this->getPosition()))
+        {
+            if(he->getHex().getFillColor() == sf::Color::Blue)
             {
-                if(he->getHex().getFillColor() == sf::Color::Blue)
-                {
 
-                    he->setColor(sf::Color::Red);
-                    he->DrawHex(w);
-
-                }
+                he->setColor(sf::Color::Red);
+                he->DrawHex(w);
 
             }
-         }
+
+        }
+    }
 }
 
 void Robot::setPosition(Grid &g)
 {
+
 
     switch(_rate)
     {
@@ -91,6 +106,7 @@ void Robot::setPosition(Grid &g)
         _robot.setPosition({getPosition().x+(30*cos(PI/3))+30,getPosition().y-(30*sin((PI)/3))});
         break;
 
+
     }
 
 
@@ -104,14 +120,21 @@ void Robot::setPosition(Grid &g)
     {
         this->setPosManually({100,100});
     }
+
+    std::cout<<_textureChange;
+    if(_textureChange)
+    {
+        _textureChange=false;
+    }
+
+    else
+        _textureChange=true;
+
 }
 
 void Robot::setRotationRight()
 {
-//    _rate --;
-//    this->_robot.rotate(60);
-//    if(_rate < -5)
-//        _rate = 0;
+
     _rate ++;
     this->_robot.rotate(60);
     if(_rate > 5)
@@ -119,24 +142,29 @@ void Robot::setRotationRight()
 }
 void Robot::setRotationLeft()
 {
-//    _rate --;
-//    this->_robot.rotate(60);
-//    if(_rate < -5)
-//        _rate = 0;
-//        _rate ++;
-//        this->_robot.rotate(60);
-//        if(_rate > 5)
-//            _rate = 0;
+
     _rate --;
-    this->_robot.rotate(60);
+    this->_robot.rotate(-60);
     if(_rate < -5)
         _rate = 0;
+
+    std::cout << " RATE : " << _rate << std::endl;
+
 }
+
 
 void Robot::setPosManually(sf::Vector2f f)
 {
-    _rate= 0;
     _robot.setPosition(f);
+    _rate= 0;
+}
+
+void Robot::setTexture(sf::Texture & t)
+{
+
+        this->_robot.setTexture(&t);
+
+
 }
 
 sf::Vector2f Robot::getPosition()

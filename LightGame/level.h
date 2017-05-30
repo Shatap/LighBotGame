@@ -31,6 +31,8 @@ private:
     bool _isRunning = true;
     PrimaryProg * _primaryProg;
     Robot *_robot;
+    sf::Color _color;
+    sf::Texture _textureQuit;
 
 public:
     Level();

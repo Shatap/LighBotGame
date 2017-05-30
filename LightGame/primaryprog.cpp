@@ -18,7 +18,7 @@ void PrimaryProg::addAction(Action  &action)
 
 void PrimaryProg::removeAction(Action &action)
 {
-
+      //_progActions.erase(action.)
 }
 
 void PrimaryProg::resetVector()
