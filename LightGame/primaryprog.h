@@ -21,7 +21,7 @@ public:
     void resetVector();
     void drawPrimProg(sf::RenderWindow &window);
     std::vector<Action*> getPrimProg();
-    void executePrimProg(sf::RenderWindow &w, Robot &r);
+    void executePrimProg(sf::RenderWindow &w, Robot &r, Grid &g);
     int getShift_X() const;
     void setShift_X();
     int getShift_Y() const;

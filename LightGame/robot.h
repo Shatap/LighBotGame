@@ -17,8 +17,9 @@ private:
 public:
     Robot();
     void draw_bot(sf::RenderWindow &w);
-    void bot_in_hex();
+    bool bot_in_hex(Grid &g);
     bool isMoving();
+    void lightHex(Grid &g, sf::RenderWindow &w);
     int getAngle();
     int getAltitude();
     void setPosition();

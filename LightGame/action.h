@@ -14,9 +14,9 @@ private:
     sf::RectangleShape _recAction;
     int _rotateRate;
     sf::Texture _Forward;
-    sf::Texture _Rotateleft;
-    sf::Texture _Rotateright;
-    sf::Texture _Lightitup;
+    sf::Texture _RotateLeft;
+    sf::Texture _RotateRight;
+    sf::Texture _LightItUp;
 
 
 public:
@@ -26,11 +26,11 @@ public:
     void setRotationRight(Robot &r);
     void changeAltitude(Robot  &r);
     void moveForward(Robot  &r);
-    void lightHex(Robot &r);
+    void lightHex(Robot &r, Grid &g, sf::RenderWindow &w);
     void displayAction(sf::RenderWindow  & window);
     sf::Texture getTexture();
     void setTexture(sf::Texture &t);
-    void executeAction(Robot &r);
+    void executeAction(Robot &r , Grid &g, sf::RenderWindow &w);
     sf::RectangleShape getDimension() const;
     void deleteAction();
     int getRotateRate() const;
