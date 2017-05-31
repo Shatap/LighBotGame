@@ -3,9 +3,6 @@
 Grid::Grid()
 
 {
-
-
-
     for(int i=0;i<GRID_SIZE;i++)
 
     {
@@ -21,7 +18,7 @@ Grid::Grid()
 
             _prevPosX2=_grid.at(0)->getPosition().x;
             _prevPosY2=_grid.at(0)->getPosition().y;
-            _hex->setPosition({_prevPosX2,_prevPosY2+60*i*sin((3.14/3))});
+            _hex->setPosition({_prevPosX2,_prevPosY2+60*i*sin((PI/3))});
             _grid.push_back(_hex);
 
         }
@@ -29,13 +26,16 @@ Grid::Grid()
 
         for(int j=0;j<GRID_SIZE;j++)
         {
+
+
             if(j%2==1)
             {
-                _hex  = new Hexagon(30.,sf::Color::Blue);
+
+                _hex  = new Hexagon(30.,sf::Color::Red);
 
                 _prevPosX2=_grid.back()->getPosition().x;
                 _prevPosY2=_grid.back()->getPosition().y;
-                _hex->setPosition({_prevPosX2+30+(30*cos((3.14/3))),_prevPosY2+30.*sin((3.14/3))});
+                _hex->setPosition({_prevPosX2+30+(30*cos((PI/3))),_prevPosY2+30.*sin((PI/3))});
                 _grid.push_back(_hex);
 
             }
@@ -46,7 +46,7 @@ Grid::Grid()
 
                 _prevPosX2=_grid.back()->getPosition().x;
                 _prevPosY2=_grid.back()->getPosition().y;
-                _hex->setPosition({_prevPosX2+30+(30*cos((3.14/3))),_prevPosY2-30.*sin((3.14/3))});
+                _hex->setPosition({_prevPosX2+30+(30*cos((PI/3))),_prevPosY2-30.*sin((PI/3))});
                 _grid.push_back(_hex);
             }
 
@@ -58,20 +58,20 @@ Grid::Grid()
 
 Grid::~Grid()
 {
-        for(Hexagon *h : _grid)
-            delete h;
+    for(Hexagon *h : _grid)
+        delete h;
 
-        delete _hex;
+    delete _hex;
 }
 
 void Grid::display(sf::RenderWindow &window)
 {
 
 
-        for(Hexagon * h:_grid)
-        {
-            h->DrawHex(window);
-        }
+    for(Hexagon * h:_grid)
+    {
+        h->DrawHex(window);
+    }
 
 
 }

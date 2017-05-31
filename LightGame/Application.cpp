@@ -49,7 +49,6 @@ void Application::process_events()
             mouse_button_pressed();
             break;
         case sf::Event::MouseButtonReleased :
-            // bouton = event.mouseButton.button;
             set_mouse_coord(event.mouseButton.x, event.mouseButton.y);
             mouse_button_released();
             break;
@@ -62,17 +61,11 @@ void Application::process_events()
     }
 }
 
-/*
- * mémorisation de la position de la souris,
- * avec conversion de coordonnées  pixel -> fenetre
- */
+
 void Application::set_mouse_coord(int x, int y)
 {
- //   std::cout << "mouse : x : " << _mouse.x << ", y : " << _mouse.y << std::endl;
     auto pos = _window.mapPixelToCoords( {x, y});
     _mouse = { pos.x, pos.y };
 }
 
-/*
- * utilitaires (fonctions statiques)
- */
+

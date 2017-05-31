@@ -20,8 +20,8 @@ public:
     PrimaryProg();
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
      * --addAction--
      * param: Action &a
      * add the action in parameter to the Class vector
@@ -31,8 +31,8 @@ public:
     void addAction(Action &action) override;
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
      * --resetVector--
      * delete all the actions stored in the class vector     *
      *
@@ -41,8 +41,8 @@ public:
     void resetVector();
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
      * --drawPrimProg--
      * param: sf::RenderWindow &w
      * draw The Rectangle that contains will contains the actions
@@ -52,8 +52,8 @@ public:
      */
     void drawPrimProg(sf::RenderWindow &window);
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
      * --executePrimProg--
      * param: sf::RenderWindow &w, Robot &r, Grid &g
      *
@@ -63,8 +63,8 @@ public:
     void executePrimProg(sf::RenderWindow &w, Robot &r, Grid &g);
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
      * --isComplete--
      *
      * if the Class vector is considered full , refuse to add any action

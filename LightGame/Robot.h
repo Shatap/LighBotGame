@@ -23,8 +23,8 @@ private:
     bool _textureChange;
 public:
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --Robot Constructor--
      *
      * Setup the dimension of the robot that will be created
@@ -35,8 +35,8 @@ public:
     Robot();
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --draw_bot--
      * param:sf::RenderWindow &w
      *
@@ -47,8 +47,8 @@ public:
     void draw_bot(sf::RenderWindow &w);
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --lightHex--
      * param: Robot &r ,Grid &g, sf::RenderWindow &w
      * Check all the hexagon on the grid , if the hexagon contains
@@ -60,8 +60,8 @@ public:
     void lightHex(Grid &g, sf::RenderWindow &w);
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --setPosition--
      * param:Grid &g
      * Depending on the _rate attribut (that changes each time the robot
@@ -71,8 +71,8 @@ public:
      */
 
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --setRotationRight--
      *
      * Does a 60° rotation to the robot
@@ -82,8 +82,8 @@ public:
      */
     void setRotationRight();
     /*!
-     * DATE: 16/06/2017
-     * BY: Yamin Tricha
+     * DATE: 05/3/2017
+     * BY: Wyatt Reeves
      * --setRotationLeft--
      *
      * Does a -60° rotation to the robot

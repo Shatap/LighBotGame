@@ -20,20 +20,19 @@ void Robot::draw_bot(sf::RenderWindow &w)
 {
 
 
-        if(_textureChange)
-        {
-            setTexture(_sideTexture);
-            w.draw(_robot);
+    if(_textureChange)
+    {
+        setTexture(_sideTexture);
+        w.draw(_robot);
 
-        }
+    }
 
-        else
-        {
-            setTexture(_downTexture);
-std::cout << " AIZUDB AI9ZUDH AIUZHD IUAZHDI UHAZIUDH A ";
-            w.draw(_robot);
-            _textureChange = true;
-        }
+    else
+    {
+        setTexture(_downTexture);
+        w.draw(_robot);
+        _textureChange = true;
+    }
 
 
 
@@ -54,10 +53,8 @@ void Robot::lightHex(Grid &g, sf::RenderWindow &w)
         {
             if(he->getHex().getFillColor() == sf::Color::Blue)
             {
-
                 he->setColor(sf::Color::Red);
                 he->DrawHex(w);
-
             }
 
         }
@@ -111,7 +108,6 @@ void Robot::setPosition(Grid &g)
 
     }
 
-
     int cpt = 0;
     for(Hexagon *hex : g.getGrid())
     {
@@ -123,7 +119,6 @@ void Robot::setPosition(Grid &g)
         this->setPosManually({100,100});
     }
 
-    std::cout<<_textureChange;
     if(_textureChange)
     {
         _textureChange=false;
@@ -136,7 +131,6 @@ void Robot::setPosition(Grid &g)
 
 void Robot::setRotationRight()
 {
-
     _rate ++;
     this->_robot.rotate(60);
     if(_rate > 5)
@@ -144,14 +138,10 @@ void Robot::setRotationRight()
 }
 void Robot::setRotationLeft()
 {
-
     _rate --;
     this->_robot.rotate(-60);
     if(_rate < -5)
         _rate = 0;
-
-    std::cout << " RATE : " << _rate << std::endl;
-
 }
 
 
@@ -163,10 +153,7 @@ void Robot::setPosManually(sf::Vector2f f)
 
 void Robot::setTexture(sf::Texture & t)
 {
-
-        this->_robot.setTexture(&t);
-
-
+    this->_robot.setTexture(&t);
 }
 
 sf::Vector2f Robot::getPosition()

@@ -21,23 +21,16 @@ Action::Action(int x, int y,Type_Action t)
     {
     case  Type_Action::forward:
         _recAction.setTexture(&_Forward);
-//        _recAction.setScale(1.5,1.5);
-
         break;
     case Type_Action::rotate_Left:
         _recAction.setTexture(&_RotateLeft );
-//        _recAction.setScale(1.5,1.5);
 
         break;
     case  Type_Action::rotate_Right:
         _recAction.setTexture(&_RotateRight);
-//        _recAction.setScale(1.5,1.5);
-
         break;
     case Type_Action::light_Hex:
         _recAction.setTexture(&_LightItUp);
-//        _recAction.setScale(1.5,1.5);
-
         break;
     }
 
@@ -53,7 +46,6 @@ void Action::setRotationLeft(Robot &r)
         _rotateRate++;
         r.setRotationLeft();
     }
-
 }
 
 void Action::setRotationRight(Robot &r)
@@ -91,39 +83,7 @@ void Action::displayAction(sf::RenderWindow &window)
 
 }
 
-sf::Texture  Action::getTexture()
-{
-   /* Type_Action t = this->_typeAction;
-    switch(t)
-    {
-    case  Type_Action::forward:
-    {
-        sf::Texture texture;
-        texture.loadFromFile("/home/Oka/LighBotGame/LightGame/Sources/UP.jpg");
-        return texture;
-        break;
-    }
-    case Type_Action::rotate_Left:
-        _recAction.setFillColor(sf::Color::Blue);
-        break;
-    case  Type_Action::rotate_Right:
-        _recAction.setFillColor(sf::Color::Yellow);
-        break;
-    case Type_Action::light_Hex:
-        _recAction.setFillColor(sf::Color::Magenta);
-        break;
 
-    case Type_Action::sec_prog:
-        _recAction.setFillColor(sf::Color::Red);
-        break;
-
-    case Type_Action::change_Altitude:
-        _recAction.setFillColor(sf::Color::Green);
-        break;
-
-
-    }*/
-}
 
 void Action::setTexture(sf::Texture &t)
 {

@@ -20,6 +20,7 @@ private:
      float _prevPosY ;
      float _prevPosX2 ;
      float _prevPosY2;
+     const float PI = 3.14157926;
 public:
 
      /*!

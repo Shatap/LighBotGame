@@ -56,8 +56,6 @@ int PrimaryProg::getShift_X() const
 void PrimaryProg::setShift_X()
 {
     _shift_X+=73;
-    std::cout << _shift_X << std::endl;
-    std::cout << _x_Pos << std::endl;
 
     if(_shift_X >= (_x_Pos + PROG_WIDTH) )
     {

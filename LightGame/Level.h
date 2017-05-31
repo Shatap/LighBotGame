@@ -7,13 +7,14 @@
 #include "Execsecprog.h"
 #include "Application.h"
 #include "Primaryprog.h"
+#include "Menu.h"
 #include "Robot.h"
 
 
 class Level: public Application
 {
 private:
-   // sf::RenderWindow _lwindow;
+    // sf::RenderWindow _lwindow;
     std::vector<Level*>_levels;
     std::vector<Grid *> _gridslvl;
     std::vector<Action *> _actionPannel;
@@ -53,6 +54,8 @@ public:
      */
 
     Level(sf::RenderWindow& window);
+
+    ~Level();
 
     /*!
      * DATE: 16/06/2017

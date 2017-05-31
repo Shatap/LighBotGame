@@ -22,13 +22,13 @@ Level::Level(sf::RenderWindow &window)
     _quit.setSize({120,80});
 
     if(!_textureQuit.loadFromFile("../LightGame/Sources/quit.png"))
-            std::cerr << "cant load image from path " << std::endl;
+        std::cerr << "cant load image from path " << std::endl;
 
     if(!_textureplay.loadFromFile("../LightGame/Sources/Play.png"))
-            std::cerr << "cant load image from path " << std::endl;
+        std::cerr << "cant load image from path " << std::endl;
 
     if(!_restart.loadFromFile("../LightGame/Sources/restart.png"))
-            std::cerr << "cant load image from path " << std::endl;
+        std::cerr << "cant load image from path " << std::endl;
 
 
     _play.setPosition(800,300);
@@ -44,6 +44,11 @@ Level::Level(sf::RenderWindow &window)
 
     _robot = new Robot();
     _robot->setPosManually(_grid->getGrid().at(0)->getPosition());
+
+}
+
+Level::~Level()
+{
 
 }
 
@@ -77,19 +82,16 @@ void Level::loop()
 
 
 
+
     launch_exec();
-
-
-
 
     if(_isAllLighted)
     {
-        _EndMenu.setSize({400,400});
-        _EndMenu.setFillColor(sf::Color::Green);
-        _EndMenu.setPosition({120,120});
-        _window.draw(_EndMenu);
-    }
 
+        Menu m(_window);
+        m.run();
+        this->~Level();
+    }
     _window.display();
 }
 
@@ -100,19 +102,13 @@ void Level::mouse_button_pressed()
         Action  *_AF = new Action(_primaryProg->getShift_X(),_primaryProg->getShift_Y(),Type_Action::forward);
         _primaryProg->addAction(*_AF);
         _primaryProg->setShift_X();
-
-        std::cout<<"FORWARD" << std::endl;
-
     }
 
     if(_rotation_Left->getDimension().getGlobalBounds().contains(_mouse) && !_primaryProg->isComplete())
     {
         Action  *_ARL= new Action(_primaryProg->getShift_X(),_primaryProg->getShift_Y(),Type_Action::rotate_Left);
         _primaryProg->addAction(*_ARL);
-
         _primaryProg->setShift_X();
-        std::cout<<"ROTATE LEFT " << std::endl;
-
     }
 
     if(_rotation_Right->getDimension().getGlobalBounds().contains(_mouse) && !_primaryProg->isComplete())
@@ -120,19 +116,15 @@ void Level::mouse_button_pressed()
         Action  *_ARR= new Action(_primaryProg->getShift_X(),_primaryProg->getShift_Y(),Type_Action::rotate_Right);
         _primaryProg->addAction(*_ARR);
         _primaryProg->setShift_X();
-        std::cout<<"ROTATE RIGHT" << std::endl;
-
     }
 
 
     if(_light->getDimension().getGlobalBounds().contains(_mouse) && !_primaryProg->isComplete() )
-    {        
+    {
 
         Action  *_AL= new Action(_primaryProg->getShift_X(),_primaryProg->getShift_Y(),Type_Action::light_Hex);
         _primaryProg->addAction(*_AL);
         _primaryProg->setShift_X();
-        std::cout<<"LIGHT_HEX" << std::endl;
-
     }
 
     if(_quit.getGlobalBounds().contains(_mouse))
@@ -145,25 +137,35 @@ void Level::mouse_button_pressed()
     if(_deleteVectorProg.getGlobalBounds().contains(_mouse))
     {
         _primaryProg->resetVector();
-        std::cout<< "POSITION HEX 1 : " <<_grid->getGrid().back()->getPosition().x << std::endl;
-        _robot->setPosManually({_grid->getGrid().at(9)->getPosition()});
-
-
+        _robot->setPosManually({_grid->getGrid().at(0)->getPosition()});
     }
     if(_play.getGlobalBounds().contains(_mouse))
     {
         _primaryProg->executePrimProg(_window,*_robot,*_grid);
+
+        int cpt2=0;
+        for(Hexagon * hex : _grid->getGrid())
+        {
+            if(hex->getColor()  == sf::Color::Blue)
+            {
+                cpt2 ++;
+            }
+            if(cpt2 == _grid->getGrid().size())
+            {
+                _isAllLighted = true;
+            }
+
+
+
+        }
 
     }
 
     for(Hexagon * hex :_grid->getGrid())
     {
         if(hex->getColor() == sf::Color::Green)
-        _isAllLighted = true;
+            _isAllLighted = true;
     }
-
-    std::cout <<" PRIMARY PROG : " << _primaryProg->getPrimProg().size() << std::endl;
-
 }
 
 
@@ -183,6 +185,7 @@ void Level::displayLevelButtons()
     _window.draw(_deleteVectorProg);
 
 }
+
 
 
 

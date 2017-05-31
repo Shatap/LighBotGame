@@ -1,5 +1,5 @@
 #include "Menu.h"
-#include "level.h"
+#include "Level.h"
 #include <iostream>
 
 Menu::Menu(sf::RenderWindow &window)
@@ -23,11 +23,11 @@ Menu::Menu(sf::RenderWindow &window)
     _text_quit.setString("QUIT");
     if(!_texture.loadFromFile("../LightGame/Sources/LightGameTitle.png"))
     {
-        std::cout << "uh ooooooooooh" << std::endl;
+        std::cerr << "cant load the Game Title" << std::endl;
     }
     if(!_backgroundtexture.loadFromFile("../LightGame/Sources/background.png"))
     {
-        std::cout << "whoopsy daisy " << std::endl;
+        std::cerr << "whoopsy daisy " << std::endl;
     }
     _background.setTexture(_backgroundtexture);
     _sprite.setTexture(_texture);
@@ -67,17 +67,4 @@ void Menu::mouse_button_pressed()
     }
 }
 
-void Menu::mouse_button_released()
-{
 
-}
-
-void Menu::key_pressed(const sf::Event::KeyEvent &)
-{
-
-}
-
-//bool Menu::souris_dans_rectangle(const Position &coin, const Position &dims) const
-//{
-//    //    if(_mouse<= )
-//}

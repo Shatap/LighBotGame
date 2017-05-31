@@ -1,7 +1,7 @@
 #include <iostream>
-#include "grid.h"
+#include "Grid.h"
 #include "Menu.h"
-#include "level.h"
+#include "Level.h"
 
 using namespace std;
 

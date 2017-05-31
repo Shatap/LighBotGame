@@ -118,7 +118,6 @@ public:
      */
     void executeAction(Robot &r , Grid &g, sf::RenderWindow &w);
 
-    sf::Texture getTexture();
     void setTexture(sf::Texture &t);
     sf::RectangleShape getDimension() const;
     void deleteAction();

@@ -3,10 +3,14 @@
 #include <SFML/Graphics.hpp>
 #include "Application.h"
 
+/**
+ * The class display a menu before the loading of the level,
+ * allowing the user to either play or quit ...
+ */
+
 class Menu: public Application
 {
 private:
-    //    sf::RenderWindow _window;
     void drawmenu(sf::RenderWindow &w);
     int _PLAY_WIDTH= 150;
     int _PLAY_HEIGHT= 75;
@@ -22,17 +26,40 @@ private:
     sf::Text _text_quit;
     sf::Font _button_font;
 public:
-    Menu();
+    /*!
+     * DATE: 05/29/2017
+     * BY: Wyatt Reeves
+     * --Menu Constructor--
+     *
+     * Sets up all the shapes needed to display the buttons of the menu
+     *
+     * param: sf::RenderWindow &w
+     * No return Type
+     */
     Menu(sf::RenderWindow& window);
-    //    sf::RectangleShape _playbutton;
-    //    sf::RectangleShape _quitbutton;
-    //    sf::Image _logo;
+
+    /*!
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
+     * --loop--
+     *
+     * inherit the loop method of the application class in
+     * order to display the menu
+     *
+     * return a boolean
+     */
     void loop() override;
-//    void init() override;
+    /*!
+     * DATE: 05/23/2017
+     * BY: Wyatt Reeves
+     * --mouse_button_pressed--
+     *
+     * inherit the method of the Application class and
+     * adapt it
+     *
+     * No return type
+     */
     void mouse_button_pressed() override;
-    void mouse_button_released() override;
-    void key_pressed(const sf::Event::KeyEvent &) override;
-    bool souris_dans_rectangle(const Position & coin, const Position & dims) const;
 };
 
 #endif // MENU_H
