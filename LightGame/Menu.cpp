@@ -76,8 +76,3 @@ void Menu::key_pressed(const sf::Event::KeyEvent &)
 {
 
 }
-
-//bool Menu::souris_dans_rectangle(const Position &coin, const Position &dims) const
-//{
-//    //    if(_mouse<= )
-//}
