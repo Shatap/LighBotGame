@@ -1,5 +1,4 @@
-#include "hexagon.h"
-
+#include "Hexagon.h"
 
 
 Hexagon::Hexagon(float size, sf::Color color)
@@ -17,10 +16,7 @@ Hexagon::Hexagon(float size, sf::Color color)
 
 }
 
-Hexagon::~Hexagon()
-{
 
-}
 
 void Hexagon::DrawHex(sf::RenderWindow &w)
 {

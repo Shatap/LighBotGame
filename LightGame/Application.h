@@ -5,7 +5,7 @@
 
 using Position = sf::Vector2f;
 
-/*
+/**
  * Classe abstraite qui fournit un modèle de comportement
  * pour les applications qui en héritent
  *
@@ -14,7 +14,7 @@ using Position = sf::Vector2f;
  * les fonctions mouse_button_pressed, etc. qui sont
  * (re) définies dans les sous-classes, ainsi que
  * (design pattern comportemental : "patron de méthodes")
- */
+ **/
 
 class Application
 {
@@ -28,9 +28,9 @@ public:
     static float distance(const Position & p1, const Position & p2 );
 
 protected:
-    /*
+    /**
      * les variables accessibles par les sous-classes
-     */
+     **/
     sf::RenderWindow &_window;           // fenêtre de dessin
     Position         _mouse;            // position de la souris
     sf::Event _event;

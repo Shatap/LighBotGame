@@ -1,7 +1,9 @@
 #ifndef EXECSECPROG_H
 #define EXECSECPROG_H
-#include "action.h"
-
+#include "Action.h"
+/**
+ * @brief The ExecSecProg class
+ */
 class ExecSecProg:public Action
 {
 private:

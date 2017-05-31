@@ -1,4 +1,4 @@
-#include "robot.h"
+#include "Robot.h"
 
 Robot::Robot():_rate{0}
 {
@@ -44,17 +44,13 @@ std::cout << " AIZUDB AI9ZUDH AIUZHD IUAZHDI UHAZIUDH A ";
     w.draw(_robot);
 }
 
-bool Robot::bot_in_hex(Grid & g)
-{
-
-}
 
 void Robot::lightHex(Grid &g, sf::RenderWindow &w)
 {
     std::vector<Hexagon *> h = g.getGrid();
     for(Hexagon *he :h)
     {
-        if (he->getHex().getGlobalBounds().contains(this->getPosition()))
+        if (he->getHex().getGlobalBounds().contains(this->getPosition() ))
         {
             if(he->getHex().getFillColor() == sf::Color::Blue)
             {

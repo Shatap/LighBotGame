@@ -1,4 +1,4 @@
-#include "grid.h"
+#include "Grid.h"
 
 Grid::Grid()
 
@@ -58,7 +58,10 @@ Grid::Grid()
 
 Grid::~Grid()
 {
+        for(Hexagon *h : _grid)
+            delete h;
 
+        delete _hex;
 }
 
 void Grid::display(sf::RenderWindow &window)

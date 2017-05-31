@@ -1,4 +1,4 @@
-#include "action.h"
+#include "Action.h"
 
 
 
@@ -11,7 +11,7 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setSize(sf::Vector2f(_ACT_WIDTH,_ACT_HEIGHT ));
     _recAction.setOutlineThickness(2);
     _recAction.setOutlineColor(sf::Color::Black);
-    _Forward.loadFromFile("../LightGame/Sources/forwardArrow.png");
+    _Forward.loadFromFile("../LightGame/Sources/Arrow.png");
     _RotateLeft.loadFromFile("../LightGame/Sources/RotateLeft.png");
     _RotateRight.loadFromFile("../LightGame/Sources/RotateRight.png");
     _LightItUp.loadFromFile("../LightGame/Sources/Light.png");
@@ -21,35 +21,30 @@ Action::Action(int x, int y,Type_Action t)
     {
     case  Type_Action::forward:
         _recAction.setTexture(&_Forward);
+        _recAction.setScale(1.5,1.5);
 
         break;
     case Type_Action::rotate_Left:
         _recAction.setTexture(&_RotateLeft );
+        _recAction.setScale(1.5,1.5);
+
         break;
     case  Type_Action::rotate_Right:
         _recAction.setTexture(&_RotateRight);
+        _recAction.setScale(1.5,1.5);
+
         break;
     case Type_Action::light_Hex:
         _recAction.setTexture(&_LightItUp);
-        break;
+        _recAction.setScale(1.5,1.5);
 
-    case Type_Action::sec_prog:
-        _recAction.setFillColor(sf::Color::Red);
         break;
-
-    case Type_Action::change_Altitude:
-        _recAction.setFillColor(sf::Color::Green);
-        break;
-
     }
 
 
 }
 
-Action::~Action()
-{
 
-}
 
 void Action::setRotationLeft(Robot &r)
 {

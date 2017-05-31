@@ -1,8 +1,10 @@
 #ifndef PROGRAM_H
 #define PROGRAM_H
 #include "vector"
-#include "action.h"
-
+#include "Action.h"
+/**
+ * Abstract class that allow Primary And Secondary Prog Classes to inherit
+ */
 class  Program
 {
 private:

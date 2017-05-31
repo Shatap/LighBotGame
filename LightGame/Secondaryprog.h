@@ -1,6 +1,6 @@
 #ifndef SECONDARYPROG_H
 #define SECONDARYPROG_H
-#include "program.h"
+#include "Program.h"
 
 class SecondaryProg:public Program
 {

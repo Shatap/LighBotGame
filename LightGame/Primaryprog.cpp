@@ -1,7 +1,7 @@
-#include "primaryprog.h"
+#include "Primaryprog.h"
 
 PrimaryProg::PrimaryProg()
-    :Program{},_x_Pos{600},_y_Pos{400},_shift_X{600},_shift_Y{400}
+    :Program{},_x_Pos{600},_y_Pos{200},_shift_X{600},_shift_Y{200}
 {
     _primprog.setFillColor(sf::Color::White);
     _primprog.setSize({PROG_WIDTH,PROG_HEIGHT});
@@ -13,8 +13,6 @@ void PrimaryProg::addAction(Action  &action)
 {
     _progActions.push_back(&action);
 }
-
-
 
 void PrimaryProg::removeAction(Action &action)
 {

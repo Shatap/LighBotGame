@@ -1,4 +1,4 @@
-#include "secondaryprog.h"
+#include "Secondaryprog.h"
 
 SecondaryProg::SecondaryProg()
 {

@@ -8,29 +8,29 @@ LIBS           += -lsfml-graphics -lsfml-window -lsfml-system
 
 
 SOURCES += main.cpp \
-    robot.cpp \
-    action.cpp \
-    program.cpp \
-    level.cpp \
-    player.cpp \
-    grid.cpp \
-    hexagon.cpp \
-    primaryprog.cpp \
-    secondaryprog.cpp \
-    execsecprog.cpp \
     Menu.cpp \
-    Application.cpp
+    Application.cpp \
+    Action.cpp \
+    Execsecprog.cpp \
+    Grid.cpp \
+    Hexagon.cpp \
+    Level.cpp \
+    Player.cpp \
+    Primaryprog.cpp \
+    Program.cpp \
+    Robot.cpp \
+    Secondaryprog.cpp
 
 HEADERS += \
-    robot.h \
-    action.h \
-    program.h \
-    level.h \
-    player.h \
-    grid.h \
-    hexagon.h \
-    primaryprog.h \
-    secondaryprog.h \
-    execsecprog.h \
     Menu.h \
-    Application.h
+    Application.h \
+    Player.h \
+    Level.h \
+    Hexagon.h \
+    Grid.h \
+    Execsecprog.h \
+    Action.h \
+    Primaryprog.h \
+    Program.h \
+    Robot.h \
+    Secondaryprog.h
