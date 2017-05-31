@@ -2,6 +2,16 @@
 #define PRIMARYPROG_H
 #include"program.h"
 
+/*
+* Classe abstraite qui fournit un modÃ ̈le de comportement
+* pour les applications qui en hÃ©ritent
+*
+* Elle lance la boucle lecture des evenements/affichage,
+* assure le décodage des événements et exÃ©cute
+* les fonctions mouse_button_pressed, etc. qui sont
+* (re) dÃ©finies dans les sous−classes, ainsi que
+* (design pattern comportemental : "patron de méthodes")
+*/
 
 class PrimaryProg: public Program
 {

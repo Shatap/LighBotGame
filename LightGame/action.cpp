@@ -11,7 +11,7 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setSize(sf::Vector2f(_ACT_WIDTH,_ACT_HEIGHT ));
     _recAction.setOutlineThickness(2);
     _recAction.setOutlineColor(sf::Color::Black);
-    _Forward.loadFromFile("../LightGame/Sources/arrow.png");
+    _Forward.loadFromFile("../LightGame/Sources/forwardArrow.png");
     _RotateLeft.loadFromFile("../LightGame/Sources/RotateLeft.png");
     _RotateRight.loadFromFile("../LightGame/Sources/RotateRight.png");
     _LightItUp.loadFromFile("../LightGame/Sources/Light.png");

@@ -7,19 +7,19 @@ Menu::Menu(sf::RenderWindow &window)
 {
     _window.setTitle("Lightbot: Learn to code!");
     _button_font.loadFromFile("../LightGame/Sources/8bitOperatorPlusSC-Bold.ttf");
-    _playbutton.setPosition(475, 400);
-    _playbutton.setFillColor(sf::Color::Green);
+    _playbutton.setPosition(565, 400);
+    _playbutton.setFillColor(sf::Color(173,13,13));
     _playbutton.setSize(sf::Vector2f(_PLAY_WIDTH, _PLAY_HEIGHT));
-    _quitbutton.setPosition(475, 500);
-    _quitbutton.setFillColor(sf::Color::Red);
+    _quitbutton.setPosition(565, 500);
+    _quitbutton.setFillColor(sf::Color(84,84,84));
     _quitbutton.setSize(sf::Vector2f(_QUIT_WIDTH, _QUIT_HEIGHT));
-    _text_play.setPosition(425, 395);
+    _text_play.setPosition(_playbutton.getPosition());
     _text_play.setString("PLAY");
     _text_play.setFont(_button_font);
-    _text_play.setCharacterSize(60);
-    _text_quit.setPosition(425, 495);
+    _text_play.setCharacterSize(55);
+    _text_quit.setPosition(_quitbutton.getPosition());
     _text_quit.setFont(_button_font);
-    _text_quit.setCharacterSize(60);
+    _text_quit.setCharacterSize(55);
     _text_quit.setString("QUIT");
     if(!_texture.loadFromFile("../LightGame/Sources/LightGameTitle.png"))
     {

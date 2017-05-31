@@ -9,12 +9,12 @@ Level::Level(sf::RenderWindow &window)
     _window.setTitle("Lightbot: Learn to code!");
     _grid = new Grid();
 
-    _secProg = new ExecSecProg(1200,0,Type_Action::sec_prog);
-    _changeAltitude = new Action(1200,80,Type_Action::change_Altitude);
-    _forward = new Action(1200,160,Type_Action::forward);
-    _rotation_Left = new Action(1200,240,Type_Action::rotate_Left);
-    _rotation_Right = new Action(1200,320,Type_Action::rotate_Right);
-    _light = new Action(1200,400,Type_Action::light_Hex);
+    _secProg = new ExecSecProg(350,550,Type_Action::sec_prog);
+    _changeAltitude = new Action(200,80,Type_Action::change_Altitude);
+    _forward = new Action(200,160,Type_Action::forward);
+    _rotation_Left = new Action(200,240,Type_Action::rotate_Left);
+    _rotation_Right = new Action(200,320,Type_Action::rotate_Right);
+    _light = new Action(200,400,Type_Action::light_Hex);
     _primaryProg = new PrimaryProg();
     _color =  sf::Color(253,233,224);
 
