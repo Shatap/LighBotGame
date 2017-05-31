@@ -67,4 +67,16 @@ void Menu::mouse_button_pressed()
     }
 }
 
+<<<<<<< HEAD
 
+=======
+void Menu::mouse_button_released()
+{
+
+}
+
+void Menu::key_pressed(const sf::Event::KeyEvent &)
+{
+
+}
+>>>>>>> 4b6d3aa9a5dda1b1df54d0429a31c61ddc8d03d5
