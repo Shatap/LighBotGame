@@ -15,7 +15,9 @@ private:
     sf::RectangleShape _playbutton;
     sf::RectangleShape _quitbutton;
     sf::Texture _texture;
+    sf::Texture _backgroundtexture;
     sf::Sprite _sprite;
+    sf::Sprite _background;
     sf::Text _text_play;
     sf::Text _text_quit;
     sf::Font _button_font;

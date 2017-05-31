@@ -6,6 +6,7 @@ Robot::Robot():_rate{0}
     _robot.setPosition({30,40});
     _robot.setOrigin({10,10});
 
+
     _robot.rotate(30);
     _robot.setScale(6,6);
 
@@ -36,6 +37,11 @@ std::cout << " AIZUDB AI9ZUDH AIUZHD IUAZHDI UHAZIUDH A ";
 
 
 
+    sf::Texture texture;
+    texture.loadFromFile("../LightGame/Sources/MainSprite.png");
+    _robot.setTexture(&texture);
+    _robot.setScale(3,3);
+    w.draw(_robot);
 }
 
 bool Robot::bot_in_hex(Grid & g)
