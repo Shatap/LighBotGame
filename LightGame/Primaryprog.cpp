@@ -14,15 +14,6 @@ void PrimaryProg::addAction(Action  &action)
     _progActions.push_back(&action);
 }
 
-<<<<<<< HEAD:LightGame/Primaryprog.cpp
-void PrimaryProg::removeAction(Action &action)
-{
-      //_progActions.erase(action.)
-}
-=======
-
->>>>>>> b772189bb917ebf1cb087fab7b014a4a979aec30:LightGame/primaryprog.cpp
-
 void PrimaryProg::resetVector()
 {
     for(Action *a : _progActions)

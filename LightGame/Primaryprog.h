@@ -29,7 +29,6 @@ public:
      * No return Value
      */
     void addAction(Action &action) override;
-    void removeAction(Action &action)override;
 
     /*!
      * DATE: 16/06/2017

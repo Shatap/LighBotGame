@@ -15,8 +15,6 @@ private:
 public:
     Program();
     virtual void  addAction(Action &action)=0;
-    virtual void  removeAction(Action &action)=0;
-
 };
 
 #endif // PROGRAM_H

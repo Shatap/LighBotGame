@@ -13,7 +13,7 @@ Action::Action(int x, int y,Type_Action t)
     _recAction.setOutlineColor(sf::Color::Black);
     _Forward.loadFromFile("../LightGame/Sources/Arrow.png");
     _RotateLeft.loadFromFile("../LightGame/Sources/RotateLeft.png");
-    _RotateRight.loadFromFile("../LightGame/Sources/RotateRight.png");
+    _RotateRight.loadFromFile("../LightGame/Sources/turnright.png");
     _LightItUp.loadFromFile("../LightGame/Sources/Light.png");
 
 
@@ -21,22 +21,22 @@ Action::Action(int x, int y,Type_Action t)
     {
     case  Type_Action::forward:
         _recAction.setTexture(&_Forward);
-        _recAction.setScale(1.5,1.5);
+//        _recAction.setScale(1.5,1.5);
 
         break;
     case Type_Action::rotate_Left:
         _recAction.setTexture(&_RotateLeft );
-        _recAction.setScale(1.5,1.5);
+//        _recAction.setScale(1.5,1.5);
 
         break;
     case  Type_Action::rotate_Right:
         _recAction.setTexture(&_RotateRight);
-        _recAction.setScale(1.5,1.5);
+//        _recAction.setScale(1.5,1.5);
 
         break;
     case Type_Action::light_Hex:
         _recAction.setTexture(&_LightItUp);
-        _recAction.setScale(1.5,1.5);
+//        _recAction.setScale(1.5,1.5);
 
         break;
     }

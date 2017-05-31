@@ -18,24 +18,23 @@ Level::Level(sf::RenderWindow &window)
 
 
 
-    _quit.setPosition(1150,600);
+    _quit.setPosition(1100,600);
     _quit.setSize({120,80});
 
-    if(!_textureQuit.loadFromFile("/mnt/roon/users/ytricha/LighBotGame/LightGame/Sources/quit.png"))
+    if(!_textureQuit.loadFromFile("../LightGame/Sources/quit.png"))
             std::cerr << "cant load image from path " << std::endl;
 
-    _textureQuit.setSmooth(true);
+    if(!_textureplay.loadFromFile("../LightGame/Sources/Play.png"))
+            std::cerr << "cant load image from path " << std::endl;
+
+    if(!_restart.loadFromFile("../LightGame/Sources/restart.png"))
+            std::cerr << "cant load image from path " << std::endl;
 
 
-
-
-
-
-    _play.setPosition(1100,650);
+    _play.setPosition(800,300);
     _play.setSize({80,60});
 
-    _deleteVectorProg.setFillColor(sf::Color::Yellow);
-    _deleteVectorProg.setPosition(1200,700);
+    _deleteVectorProg.setPosition(800,400);
     _deleteVectorProg.setSize({60,40});
     _actionPannel.push_back(_forward);
     _actionPannel.push_back(_rotation_Right);
@@ -172,6 +171,12 @@ void Level::mouse_button_pressed()
 void Level::displayLevelButtons()
 {
     _quit.setTexture(&_textureQuit);
+    _quit.setScale(1.2, 1.2);
+    _play.setTexture(&_textureplay);
+    _play.setScale(1.6,1.6);
+    _deleteVectorProg.setTexture(&_restart);
+    _deleteVectorProg.setScale(2,2);
+
 
     _window.draw(_play);
     _window.draw(_quit);

@@ -33,6 +33,8 @@ private:
     Robot *_robot;
     sf::Color _color;
     sf::Texture _textureQuit;
+    sf::Texture _textureplay;
+    sf::Texture _restart;
     bool _isAllLighted;
     int _nbHexUnlighted;
     sf::RectangleShape _EndMenu;
